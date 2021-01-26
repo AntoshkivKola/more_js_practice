@@ -36,13 +36,22 @@ class Student {
   constructor(name, surName, isMale, contacts, dataFaculty, dataChair) {
     this.name = name;
     this.surName = surName;
-    this.isMAle = isMale;
+    this.isMale = isMale;
     this.contacts = contacts;
     this.campus = new Campus(dataFaculty, dataChair);
   }
+
+  info() {
+    return `   Name: ${this.name},
+    SurName: ${this.surName},
+    Male: ${this.isMale ? 'Man' : 'Woman'},
+    Contacts: ${this.contacts},
+    Faculty: ${this.campus.dataFaculty},
+    Chair: ${this.campus.dataChair}`;
+  }
 };
 
-const stud = new Student('Test', 'Testovich', true, ['0894547812', 'mail@mail.com'], 'some date about faculty...', 'some date about chair')
+const stud = new Student('Test', 'Testovich', true, ['0894547812', 'mail@mail.com'], 'Information technology', 'SD');
 
 
 
