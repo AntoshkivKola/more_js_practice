@@ -1,45 +1,49 @@
 'use strict'
 
-class User {
-  constructor(name, surName) {
-    this.name = name;
-    this.surName = surName;
-  }
-  getFullName() {
-    return `${this.name} ${this.surName}`;
+// TASK 2
+/*
+2.1 Создать объект Student который содержит следующие свойства: имя, фамилию, пол, контактные данные.
+2.2 Создать объект, который содержит свойства, о факультете и кафедре.
+2.3 Связать объекты между собой. т.е. прописать данные об факультете и кафедре для студента
+2.4 Реализовать функцию выводит на экран всю информацию о студенте 
+*/
+
+/*
+const campus = {
+  dataFaculty : 'some date about faculty...',
+  dataChair : 'some date about chair',
+}
+
+const student = {
+  name : 'Test',
+  surName : 'Testovich',
+  isMale : true,
+  contacts : [ '0894547812', 'mail@mail.com'],
+  campus : campus,
+}
+
+console.log(student);
+*/
+
+class Campus {
+  constructor(dataFaculty, dataChair) {
+    this.dataFaculty = dataFaculty;
+    this.dataChair = dataChair;
   }
 }
 
-class Student extends User {
-  /**
-   * 
-   * @param {string} name 
-   * @param {string} surName 
-   * @param {Date} date 
-   */
-  constructor(name, surName, date) {
-    super(name, surName);
-    if(date.getFullYear() > new Date().getFullYear()){
-      throw new RangeError('Not a student!');
-    }
-    this._date = date;
+class Student {
+  constructor(name, surName, isMale, contacts, dataFaculty, dataChair) {
+    this.name = name;
+    this.surName = surName;
+    this.isMAle = isMale;
+    this.contacts = contacts;
+    this.campus = new Campus(dataFaculty, dataChair);
   }
-  get date() {
-    return this._date;
-  }
-  getCourse() {
-    const currentDate = new Date();
-    const validDate = (currentDate.getFullYear() <= this.date.getFullYear() + 5) &&  (currentDate.getFullYear() >= this.date.getFullYear());
-    
-    if (!validDate) {
-      throw new RangeError('Not a student!');
-    }
-   
-    if(currentDate.getFullYear() === this.date.getFullYear() + 5){
-      return currentDate.getFullYear() - this.date.getFullYear();
-    }
-    return currentDate.getFullYear() - this.date.getFullYear() + 1;
-  }
-}
+};
+
+const stud = new Student('Test', 'Testovich', true, ['0894547812', 'mail@mail.com'], 'some date about faculty...', 'some date about chair')
+
+
 
 
