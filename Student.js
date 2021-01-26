@@ -42,7 +42,4 @@ class Student extends User {
   }
 }
 
-const s = new Student('Tets', 'Testovich', new Date(2018, 8, 1));
-console.log(s.getCourse()); // 4
-const s1 = new Student('1','1', new Date(2021,0,1));
-console.log(s1.getCourse()) // 1
+
