@@ -30,7 +30,7 @@ console.log(sumator(10)); //55
 */
 const arr = [];
 for (let i = 0; i < 25; i++) {
-  arr.push(Math.round(Math.random() * 100));
+  arr.push(Math.round(Math.random() * 10) - 5);
 }
 console.log(arr);
 
@@ -75,9 +75,9 @@ const someFunction = (n) => {
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0) {
       console.log(`fizz`);
-    } else if(i%5 ===0){
+    } else if (i % 5 === 0) {
       console.log(`buzz`);
-    } else{
+    } else {
       console.log(i);
     }
   }
