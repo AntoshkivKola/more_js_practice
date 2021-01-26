@@ -55,7 +55,7 @@ showEvenElem(arr);
 function showIndexOfNullElem(arr) {
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i]  === 0) {
+    if (arr[i] === 0) {
       console.log(i);
       count++;
     }
@@ -63,3 +63,23 @@ function showIndexOfNullElem(arr) {
   console.log(`количество нулевых элементов ${count}`);
 }
 showIndexOfNullElem(arr);
+
+// TASK 5
+/*
+5 Требуется написать функцию, выводящую в консоль числа от 1 до n, где n — это целое число, которая функция принимает в качестве параметра, с такими условиями:
+вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
+вывод fizz вместо чисел, кратных 3;
+вывод buzz вместо чисел, кратных 5
+*/
+const someFunction = (n) => {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0) {
+      console.log(`fizz`);
+    } else if(i%5 ===0){
+      console.log(`buzz`);
+    } else{
+      console.log(i);
+    }
+  }
+}
+console.log(8) // 1,2,fizz,4,buzz,fizz,7,8
