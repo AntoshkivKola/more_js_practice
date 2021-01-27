@@ -10,7 +10,7 @@ function sumator(n = 1) {
     throw TypeError();
   }
   if (n === 1) {
-    return n;
+    return 1;
   }
   return n + sumator(n - 1);
 }
@@ -29,22 +29,16 @@ console.log(sumator(10)); //55
 3.5 Подсчитать количество нулевых элементов 
 */
 console.log('\n\nTASK 3 \n');
-const arr = [];
-
-for (let i = 0; i < 25; i++) {
-  arr.push(Math.round(Math.random() * 10) - 5);
-}
+const arr = new Array(25).fill().map(()=>(Math.round(Math.random() * 10) - 5));
 console.log(arr);
 
 console.log('showEvenIndex');
 const showEvenIndex = (arr) => arr.forEach((elem, i) => i % 2 === 0 ? console.log(elem) : false);
 showEvenIndex(arr);
 
-
 console.log('showEvenElem');
 const showEvenElem = (arr) => arr.forEach(element => element % 2 === 0 ? console.log(element) : false);
 showEvenElem(arr);
-
 
 console.log('showIndexOfNullElem');
 function showIndexOfNullElem(arr) {
