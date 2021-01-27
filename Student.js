@@ -42,12 +42,20 @@ class Student {
   }
 
   showInfo() {
-    return `   Name: ${this.name},
-    SurName: ${this.surName},
-    Male: ${this.isMale ? 'Man' : 'Woman'},
-    Contacts: ${this.contacts},
-    Faculty: ${this.campus.dataFaculty},
-    Chair: ${this.campus.dataChair}`;
+    const show = (obj) => {
+      return Object.entries(obj).map((elem) => {
+        if(elem[0]=== 'contacts'){
+          return elem.join(': ');
+        }
+        if (typeof (elem[1]) === 'object') {
+          return show(elem[1]);
+        }
+        return elem.join(': ');
+      }).join('\n');
+    }
+
+    return show(this);
+    
   }
 };
 
