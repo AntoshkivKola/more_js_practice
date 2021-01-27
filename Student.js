@@ -41,7 +41,7 @@ class Student {
     this.campus = new Campus(dataFaculty, dataChair);
   }
 
-  info() {
+  showInfo() {
     return `   Name: ${this.name},
     SurName: ${this.surName},
     Male: ${this.isMale ? 'Man' : 'Woman'},
