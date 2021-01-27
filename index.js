@@ -28,38 +28,33 @@ console.log(sumator(10)); //55
 3.4 Вывести индексы нулевых элементов (элемент равен нулю)
 3.5 Подсчитать количество нулевых элементов 
 */
+console.log('\n\nTASK 3 \n');
 const arr = [];
+
 for (let i = 0; i < 25; i++) {
   arr.push(Math.round(Math.random() * 10) - 5);
 }
 console.log(arr);
 
-function showEvenIndex(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (i % 2 === 0) {
-      console.log(arr[i]);
-    }
-  }
-}
+console.log('showEvenIndex');
+const showEvenIndex = (arr) => arr.forEach((elem, i) => i % 2 === 0 ? console.log(elem) : false);
 showEvenIndex(arr);
 
-function showEvenElem(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      console.log(arr[i]);
-    }
-  }
-}
+
+console.log('showEvenElem');
+const showEvenElem = (arr) => arr.forEach(element => element % 2 === 0 ? console.log(element) : false);
 showEvenElem(arr);
 
+
+console.log('showIndexOfNullElem');
 function showIndexOfNullElem(arr) {
   let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === 0) {
+  arr.forEach((elem,i) =>{  
+    if (elem === 0) {
       console.log(i);
       count++;
     }
-  }
+  });
   console.log(`количество нулевых элементов ${count}`);
 }
 showIndexOfNullElem(arr);
@@ -71,6 +66,8 @@ showIndexOfNullElem(arr);
 вывод fizz вместо чисел, кратных 3;
 вывод buzz вместо чисел, кратных 5
 */
+
+console.log('\n\nTASK 5 \n');
 const someFunction = (n) => {
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0) {
@@ -82,4 +79,4 @@ const someFunction = (n) => {
     }
   }
 }
-console.log(8) // 1,2,fizz,4,buzz,fizz,7,8
+console.log(someFunction(8)) // 1,2,fizz,4,buzz,fizz,7,8
